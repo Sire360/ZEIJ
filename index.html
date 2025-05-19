@@ -1,83 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zambezi Institute for Environmental Justice</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zambezi Institute for Environmental Justice</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-orange: #FF6B35;
+      --primary-green: #4CAF7D;
+      --primary-blue: #3498DB;
+      --dark-gray: #3A3A3A;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Header Styles */
+    header {
+      background: white;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--primary-orange);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--dark-gray);
+      margin: 0 1rem;
+      font-weight: 600;
+    }
+
+    /* Language Switcher */
+    .lang-switcher {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .lang-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      color: var(--dark-gray);
+    }
+
+    /* Donate Button */
+    .donate-btn {
+      background: var(--primary-green);
+      color: white !important;
+      padding: 0.8rem 2rem;
+      border-radius: 25px;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .donate-btn:hover {
+      background: #3d8b63;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://unsplash.com/photos/green-trees-d2Sd-JK2tJo') center/cover;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: white;
+      position: relative;
+      margin-top: 60px; /* Adjust for fixed header */
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Key Goals Section */
+    .goals-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .goal-card {
+      text-align: center;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      background: white;
+    }
+
+    /* Footer Styles */
+    footer {
+      background: var(--dark-gray);
+      color: white;
+      padding: 3rem 2rem;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .hero {
+        height: 50vh;
+      }
+      .hero-content h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <div class="logo">
-            <img src="ZEij_logo.JPG" alt="ZIEJ Logo" width="100">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#story">Our Story</a></li>
-                <li><a href="#profile">Profile</a></li>
-                <li><a href="#programs">Programs</a></li>
-                <li><a href="#facts">Facts</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section id="story" class="section">
-        <h1>Our Story</h1>
-        <p>In 2002, Dr. Mandla Kawewe witnessed a poisoned river in Luanshya, sparking his journey. In 2006, he founded ZIEJ in Lusaka, starting with a single-room office. From early legal victories in 2009 to launching "Air for All" in 2021, ZIEJ has grown into a continent-wide movement for environmental justice.</p>
-    </section>
-
-    <section id="profile" class="section">
-        <h1>Our Profile</h1>
-        <p>Founded in 2006 by Dr. Mandla Kawewe, ZIEJ is a Pan-African NGO headquartered in Lusaka, with offices in Nairobi, Kinshasa, and Pretoria. We work at the intersection of environmental justice, extractive industry governance, and community rights.</p>
-        <h2>Purpose</h2>
-        <p>To advance environmental justice through policy research, litigation, and community mobilization.</h2>
-        <h2>Mission</h2>
-        <p>To protect the rights of African communities impacted by environmental degradation.</h2>
-        <h2>Vision</h2>
-        <p>An Africa where communities thrive in harmony with the environment.</h2>
-    </section>
-
-    <section id="programs" class="section">
-        <h1>Our Programs</h1>
-        <ul>
-            <li>Environmental Justice Litigation Unit (EJLU)</li>
-            <li>Community Monitoring Labs</li>
-            <li>Extractives & Accountability Program</li>
-            <li>Policy & Research Department</li>
-            <li>Youth Climate Leadership Fellowship</li>
-        </ul>
-    </section>
-
-    <section id="facts" class="section">
-        <h1>Key Facts</h1>
-        <ul>
-            <li>Established: 2006</li>
-            <li>Headquarters: Lusaka, Zambia</li>
-            <li>Staff: 130 full-time, 250 field partners</li>
-            <li>Budget: $15 million annually</li>
-            <li>Legal Impact: Over 30 landmark cases won</li>
-        </ul>
-    </section>
-
-    <section id="contact" class="section">
-        <h1>Contact Us</h1>
-        <form id="contactForm">
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" required><br>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br>
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message" required></textarea><br>
-            <button type="submit">Send</button>
-        </form>
-        <p id="formMessage"></p>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Zambezi Institute for Environmental Justice. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+  <!-- Header with Language Switcher -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">ZIEJ</div>
+      <nav>
+        <
