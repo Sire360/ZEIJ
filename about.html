@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZIEJ About Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    :root {
+      --primary-orange: #FF6B35;
+      --primary-green: #4CAF7D;
+      --primary-blue: #3498DB;
+      --dark-gray: #3A3A3A;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Header Styles */
+    header {
+      background: white;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--primary-orange);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--dark-gray);
+      margin: 0 1rem;
+      font-weight: 600;
+    }
+
+    /* Language Switcher */
+    .lang-switcher {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .lang-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      color: var(--dark-gray);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* Donate Button */
+    .donate-btn {
+      background: var(--primary-green);
+      color: white !important;
+      padding: 0.8rem 2rem;
+      border-radius: 25px;
+      transition: background 0.3s;
+      text-decoration: none;
+    }
+
+    .donate-btn:hover {
+      background: #3d8b63;
+    }
+
+    /* About Section */
+    .about-section {
+      padding: 8rem 2rem 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .about-section h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--dark-gray);
+      margin-bottom: 3rem;
+    }
+
+    .about-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .about-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .about-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .about-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--primary-blue);
+    }
+
+    .about-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+      color: var(--dark-gray);
+    }
+
+    .about-card p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    /* Footer Styles */
+    footer {
+      background: var(--dark-gray);
+      color: white;
+      padding: 3rem 2rem;
+      margin-top: 4rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .footer-content p {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .about-section h1 {
+        font-size: 2rem;
+      }
+      .about-card {
+        padding: 1.5rem;
+      }
+      .about-icon {
+        font-size: 2.5rem;
+      }
+      .about-card h3 {
+        font-size: 1.2rem;
+      }
+      .about-card p {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with Language Switcher -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">ZIEJ</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="programs.html">Programs</a>
+        <a href="#contact">Contact</a>
+        <a href="#donate" class="donate-btn">Donate Now</a>
+      </nav>
+      <div class="lang-switcher">
+        <button class="lang-btn" onclick="changeLanguage('en')">ENGLISH</button>
+        <button class="lang-btn" onclick="changeLanguage('es')">SWAHILI</button>
+        <button class="lang-btn" onclick="changeLanguage('fr')">FRENCH</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <h1 data-i18n="about_title">About Us</h1>
+    <div class="about-container">
+      <div class="about-card">
+        <i class="fas fa-heart about-icon"></i>
+        <h3 data-i18n="mission_title">Our Mission</h3>
+        <p data-i18n="mission_text">To advocate for environmental justice across Africa through innovative litigation, community empowerment, and sustainable solutions.</p>
+      </div>
+      <div class="about-card">
+        <i class="fas fa-history about-icon"></i>
+        <h3 data-i18n="history_title">Our History</h3>
+        <p data-i18n="history_text">Founded in 2006 by Dr. Mandla Kawewe in Lusaka after witnessing a poisoned river, ZIEJ has grown into a leading voice for environmental rights.</p>
+      </div>
+      <div class="about-card">
+        <i class="fas fa-users about-icon"></i>
+        <h3 data-i18n="team_title">Our Team</h3>
+        <p data-i18n="team_text">A dedicated group of 130 professionals, including lawyers, scientists, and activists, committed to environmental justice.</p>
+      </div>
+      <div class="about-card">
+        <i class="fas fa-chart-line about-icon"></i>
+        <h3 data-i18n="impact_title">Our Impact</h3>
+        <p data-i18n="impact_text">Secured over $18M in reparations and launched the 'Air for All' platform, impacting millions across the continent.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p data-i18n="footer_text">© 2025 Zambezi Institute for Environmental Justice. All rights reserved.</p>
+      <p>Contact: info@ziej.org | Lusaka, Zambia</p>
+    </div>
+  </footer>
+
+  <script>
+    // Basic Internationalization
+    const translations = {
+      en: {
+        about_title: "About Us",
+        mission_title: "Our Mission",
+        mission_text: "To advocate for environmental justice across Africa through innovative litigation, community empowerment, and sustainable solutions.",
+        history_title: "Our History",
+        history_text: "Founded in 2006 by Dr. Mandla Kawewe in Lusaka after witnessing a poisoned river, ZIEJ has grown into a leading voice for environmental rights.",
+        team_title: "Our Team",
+        team_text: "A dedicated group of 130 professionals, including lawyers, scientists, and activists, committed to environmental justice.",
+        impact_title: "Our Impact",
+        impact_text: "Secured over $18M in reparations and launched the 'Air for All' platform, impacting millions across the continent.",
+        footer_text: "© 2025 Zambezi Institute for Environmental Justice. All rights reserved."
+      },
+      es: {
+        about_title: "Kuhusu Sisi",
+        mission_title: "Dhumuni Letu",
+        mission_text: "Kutetea haki ya mazingira kote Afrika kupitia mashtaka ya ubunifu, uwezeshaji wa jamii, na suluhisho za mazingira endelevu.",
+        history_title: "Historia Yetu",
+        history_text: "Ilianzishwa mwaka wa 2006 na Dr. Mandla Kawewe huko Lusaka baada ya kuona mto uliochafuliwa, ZIEJ imekua kuwa sauti ya kuongoza kwa haki za mazingira.",
+        team_title: "Timu Yetu",
+        team_text: "Kikundi cha wataalamu 130 waliojitolea, wakiwemo wanasheria, wanasayansi, na wanaharakati, waliotia moyo haki ya mazingira.",
+        impact_title: "Athari Yetu",
+        impact_text: "Imepata fidia za zaidi ya $18M na kuanzisha jukwaa la 'Air for All,' linaloathiri mamilioni barani.",
+        footer_text: "© 2025 Taasisi ya Zambezi ya Haki ya Mazingira. Haki zote zimehifadhiwa."
+      },
+      fr: {
+        about_title: "À Propos de Nous",
+        mission_title: "Notre Mission",
+        mission_text: "Plaidoyer pour la justice environnementale à travers l'Afrique grâce à une litigation innovante, l'autonomisation des communautés et des solutions durables.",
+        history_title: "Notre Histoire",
+        history_text: "Fondé en 2006 par le Dr Mandla Kawewe à Lusaka après avoir été témoin d'une rivière empoisonnée, ZIEJ est devenu une voix majeure pour les droits environnementaux.",
+        team_title: "Notre Équipe",
+        team_text: "Un groupe dévoué de 130 professionnels, incluant avocats, scientifiques et activistes, engagés pour la justice environnementale.",
+        impact_title: "Notre Impact",
+        impact_text: "Obtenu plus de 18 millions de dollars de réparations et lancé la plateforme 'Air for All', touchant des millions à travers le continent.",
+        footer_text: "© 2025 Institut Zambezi pour la Justice Environnementale. Tous droits réservés."
+      }
+    };
+
+    function changeLanguage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        element.textContent = translations[lang][key];
+      });
+    }
+
+    // Set default language to English
+    changeLanguage('en');
+  </script>
+</body>
+</html>
