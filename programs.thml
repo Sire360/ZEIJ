@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZIEJ Programs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    :root {
+      --primary-orange: #FF6B35;
+      --primary-green: #4CAF7D;
+      --primary-blue: #3498DB;
+      --dark-gray: #3A3A3A;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Header Styles */
+    header {
+      background: white;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--primary-orange);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--dark-gray);
+      margin: 0 1rem;
+      font-weight: 600;
+    }
+
+    /* Language Switcher */
+    .lang-switcher {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .lang-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      color: var(--dark-gray);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* Donate Button */
+    .donate-btn {
+      background: var(--primary-green);
+      color: white !important;
+      padding: 0.8rem 2rem;
+      border-radius: 25px;
+      transition: background 0.3s;
+      text-decoration: none;
+    }
+
+    .donate-btn:hover {
+      background: #3d8b63;
+    }
+
+    /* Programs Section */
+    .programs-section {
+      padding: 8rem 2rem 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .programs-section h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--dark-gray);
+      margin-bottom: 3rem;
+    }
+
+    .programs-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .program-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .program-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .program-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--primary-blue);
+    }
+
+    . kursaalprogram-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+      color: var(--dark-gray);
+    }
+
+    .program-card p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+    /* Footer Styles */
+    footer {
+      background: var(--dark-gray);
+      color: white;
+      padding: 3rem 2rem;
+      margin-top: 4rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .footer-content p {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .programs-section h1 {
+        font-size: 2rem;
+      }
+      .program-card {
+        padding: 1.5rem;
+      }
+      .program-icon {
+        font-size: 2.5rem;
+      }
+      .program-card h3 {
+        font-size: 1.2rem;
+      }
+      .program-card p {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with Language Switcher -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">ZIEJ</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="#about">About</a>
+        <a href="#programs">Programs</a>
+        <a href="#contact">Contact</a>
+        <a href="#donate" class="donate-btn">Donate Now</a>
+      </nav>
+      <div class="lang-switcher">
+        <button class="lang-btn" onclick="changeLanguage('en')">ENGLISH</button>
+        <button class="lang-btn" onclick="changeLanguage('es')">SWAHILI</button>
+        <button class="lang-btn" onclick="changeLanguage('fr')">FRENCH</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Programs Section -->
+  <section class="programs-section">
+    <h1 data-i18n="programs_title">Our Programs</h1>
+    <div class="programs-container">
+      <div class="program-card">
+        <i class="fas fa-gavel program-icon"></i>
+        <h3 data-i18n="program1_title">Environmental Justice Litigation Unit</h3>
+        <p data-i18n="program1_text">Providing legal defense and pursuing strategic lawsuits to protect communities from environmental harm and pollution.</p>
+      </div>
+      <div class="program-card">
+        <i class="fas fa-water program-icon"></i>
+        <h3 data-i18n="program2_title">Community Monitoring Labs</h3>
+        <p data-i18n="program2_text">Equipping communities with sensor kits and mobile apps to monitor air and water quality in real-time.</p>
+      </div>
+      <div class="program-card">
+        <i class="fas fa-industry program-icon"></i>
+        <h3 data-i18n="program3_title">Extractives & Accountability</h3>
+        <p data-i18n="program3_text">Engaging governments and corporations to establish responsible mining frameworks and ensure accountability.</p>
+      </div>
+      <div class="program-card">
+        <i class="fas fa-book program-icon"></i>
+        <h3 data-i18n="program4_title">Policy & Research</h3>
+        <p data-i18n="program4_text">Conducting research and publishing "State of Environmental Justice" reports to influence policy and advocate for change.</p>
+      </div>
+      <div class="program-card">
+        <i class="fas fa-users program-icon"></i>
+        <h3 data-i18n="program5_title">Youth Climate Leadership</h3>
+        <p data-i18n="program5_text">Training young activists to lead environmental initiatives and advocate for climate justice across Africa.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p data-i18n="footer_text">© 2025 Zambezi Institute for Environmental Justice. All rights reserved.</p>
+      <p>Contact: info@ziej.org | Lusaka, Zambia</p>
+    </div>
+  </footer>
+
+  <script>
+    // Basic Internationalization
+    const translations = {
+      en: {
+        programs_title: "Our Programs",
+        program1_title: "Environmental Justice Litigation Unit",
+        program1_text: "Providing legal defense and pursuing strategic lawsuits to protect communities from environmental harm and pollution.",
+        program2_title: "Community Monitoring Labs",
+        program2_text: "Equipping communities with sensor kits and mobile apps to monitor air and water quality in real-time.",
+        program3_title: "Extractives & Accountability",
+        program3_text: "Engaging governments and corporations to establish responsible mining frameworks and ensure accountability.",
+        program4_title: "Policy & Research",
+        program4_text: "Conducting research and publishing 'State of Environmental Justice' reports to influence policy and advocate for change.",
+        program5_title: "Youth Climate Leadership",
+        program5_text: "Training young activists to lead environmental initiatives and advocate for climate justice across Africa.",
+        footer_text: "© 2025 Zambezi Institute for Environmental Justice. All rights reserved."
+      },
+      es: {
+        programs_title: "Mipango Yetu",
+        program1_title: "Kitengo cha Mashtaka ya Haki ya Mazingira",
+        program1_text: "Kutoa ulinzi wa kisheria na kufuatilia mashtaka ya kimkakati ili kulinda jamii dhidi ya madhara ya mazingira na uchafuzi.",
+        program2_title: "Maabara za Ufuatiliaji wa Jamii",
+        program2_text: "Kuwapa jamii vifaa vya kihisi na programu za simu za kufuatilia ubora wa hewa na maji kwa wakati halisi.",
+        program3_title: "Uchimbaji na Uwajibikaji",
+        program3_text: "Kushirikiana na serikali na makampuni kuanzisha mifumo ya uchimbaji inayowajibika na kuhakikisha uwajibikaji.",
+        program4_title: "Sera na Utafiti",
+        program4_text: "Kufanya utafiti na kuchapisha ripoti za 'Hali ya Haki ya Mazingira' ili kushawishi sera na kutetea mabadiliko.",
+        program5_title: "Uongozi wa Vijana wa Hali ya Hewa",
+        program5_text: "Kuwafundisha wanaharakati vijana kuongoza mipango ya mazingira na kutetea haki ya hali ya hewa kote barani Afrika.",
+        footer_text: "© 2025 Taasisi ya Zambezi ya Haki ya Mazingira. Haki zote zimehifadhiwa."
+      },
+      fr: {
+        programs_title: "Nos Programmes",
+        program1_title: "Unité de Litige pour la Justice Environnementale",
+        program1_text: "Fournir une défense juridique et engager des poursuites stratégiques pour protéger les communautés des dommages environnementaux et de la pollution.",
+        program2_title: "Laboratoires de Surveillance Communautaire",
+        program2_text: "Équiper les communautés de kits de capteurs et d'applications mobiles pour surveiller la qualité de l'air et de l'eau en temps réel.",
+        program3_title: "Extractives & Responsabilité",
+        program3_text: "Collaborer avec les gouvernements et les entreprises pour établir des cadres d'extraction responsables et garantir la responsabilité.",
+        program4_title: "Politique & Recherche",
+        program4_text: "Mener des recherches et publier des rapports sur l'état de la justice environnementale pour influencer les politiques et plaider pour le changement.",
+        program5_title: "Leadership Climatique des Jeunes",
+        program5_text: "Former de jeunes activistes pour diriger des initiatives environnementales et plaider pour la justice climatique à travers l'Afrique.",
+        footer_text: "© 2025 Institut Zambezi pour la Justice Environnementale. Tous droits réservés."
+      }
+    };
+
+    function changeLanguage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        element.textContent = translations[lang][key];
+      });
+    }
+
+    // Set default language to English
+    changeLanguage('en');
+  </script>
+</body>
+</html>
