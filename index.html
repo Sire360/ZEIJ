@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zambezi Institute for Environmental Justice</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     :root {
       --primary-orange: #FF6B35;
@@ -67,6 +68,8 @@
       cursor: pointer;
       padding: 0.5rem;
       color: var(--dark-gray);
+      font-size: 0.9rem;
+      font-weight: 600;
     }
 
     /* Donate Button */
@@ -75,7 +78,7 @@
       color: white !important;
       padding: 0.8rem 2rem;
       border-radius: 25px;
-      transition: 0.3s;
+      transition: background 0.3s;
       text-decoration: none;
     }
 
@@ -92,7 +95,7 @@
       text-align: center;
       color: white;
       position: relative;
-      margin-top: 60px; /* Adjust for fixed header */
+      margin-top: 60px;
     }
 
     .hero::after {
@@ -113,6 +116,10 @@
       padding: 2rem;
     }
 
+    .hero-content .donate-btn {
+      margin-top: 2rem;
+    }
+
     /* Key Goals Section */
     .goals-container {
       display: grid;
@@ -129,6 +136,28 @@
       border-radius: 10px;
       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
       background: white;
+      transition: transform 0.3s;
+    }
+
+    .goal-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .goal-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary-blue);
+    }
+
+    .goal-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--dark-gray);
+    }
+
+    .goal-card p {
+      font-size: 0.9rem;
+      color: #666;
     }
 
     /* Footer Styles */
@@ -139,6 +168,17 @@
       margin-top: 4rem;
     }
 
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .footer-content p {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Media Queries */
     @media (max-width: 768px) {
       .nav-container {
         flex-direction: column;
@@ -150,10 +190,12 @@
       .hero-content h1 {
         font-size: 1.5rem;
       }
+      .hero-content p {
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
-
 <body>
   <!-- Header with Language Switcher -->
   <header>
@@ -181,32 +223,32 @@
       <p class="mission-statement" data-i18n="mission">
         Advocating for environmental justice through innovation, litigation, and community empowerment. Together, we build a sustainable future.
       </p>
-      <a href="#programs" class="donate-btn" style="margin-top: 2rem;">Join Our Movement</a>
+      <a href="#programs" class="donate-btn">Join Our Movement</a>
     </div>
   </section>
 
   <!-- Key Goals Section -->
   <section class="goals-container">
     <div class="goal-card">
+      <i class="fas fa-gavel goal-icon"></i>
       <h3 data-i18n="goal1_title">Environmental Litigation</h3>
       <p data-i18n="goal1_text">Legal action to defend communities against pollution.</p>
-      <img src="https://unsplash.com/photos/brown-mallet-on-gray-wooden-surface-9z9fxr_7Z-k" alt="Litigation">
     </div>
     <div class="goal-card">
+      <i class="fas fa-water goal-icon"></i>
       <h3 data-i18n="goal2_title">Community Monitoring</h3>
       <p data-i18n="goal2_text">Real-time tracking of air and water quality.</p>
-      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Monitoring">
     </div>
     <div class="goal-card">
+      <i class="fas fa-balance-scale goal-icon"></i>
       <h3 data-i18n="goal3_title">Policy Advocacy</h3>
       <p data-i18n="goal3_text">Research and policy to promote justice.</p>
-      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Advocacy">
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <div style="max-width: 1200px; margin: 0 auto;">
+    <div class="footer-content">
       <p data-i18n="footer_text">© 2025 Zambezi Institute for Environmental Justice. All rights reserved.</p>
       <p>Contact: info@ziej.org | Lusaka, Zambia</p>
     </div>
@@ -227,15 +269,15 @@
         footer_text: "© 2025 Zambezi Institute for Environmental Justice. All rights reserved."
       },
       es: {
-        hero_title: "Protegiendo el Medio Ambiente de África",
-        mission: "Abogando por la justicia ambiental a través de la innovación, la litigación y el empoderamiento comunitario. Juntos, construimos un futuro sostenible.",
-        goal1_title: "Litigación Ambiental",
-        goal1_text: "Acción legal para defender a las comunidades contra la contaminación.",
-        goal2_title: "Monitoreo Comunitario",
-        goal2_text: "Seguimiento en tiempo real de la calidad del aire y el agua.",
-        goal3_title: "Defensa de Políticas",
-        goal3_text: "Investigación y políticas para promover la justicia.",
-        footer_text: "© 2025 Instituto Zambezi para la Justicia Ambiental. Todos los derechos reservados."
+        hero_title: "Kukinga Mazingira ya Afrika",
+        mission: "Kutetea haki ya mazingira kupitia uvumbuzi, mashtaka, na uwezeshaji wa jamii. Pamoja, tunaunda mustakabali endelevu.",
+        goal1_title: "Mashtaka ya Mazingira",
+        goal1_text: "Hatua za kisheria za kutetea jamii dhidi ya uchafuzi.",
+        goal2_title: "Ufuatiliaji wa Jamii",
+        goal2_text: "Ufuatiliaji wa wakati halisi wa ubora wa hewa na maji.",
+        goal3_title: "Utataji wa Sera",
+        goal3_text: "Utafiti na sera za kukuza haki.",
+        footer_text: "© 2025 Taasisi ya Zambezi ya Haki ya Mazingira. Haki zote zimehifadhiwa."
       },
       fr: {
         hero_title: "Protéger l'Environnement de l'Afrique",
@@ -256,6 +298,9 @@
         element.textContent = translations[lang][key];
       });
     }
+
+    // Set default language to English
+    changeLanguage('en');
   </script>
 </body>
 </html>
