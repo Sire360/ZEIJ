@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZIEJ Join Our Movement</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    :root {
+      --primary-orange: #FF6B35;
+      --primary-green: #4CAF7D;
+      --primary-blue: #3498DB;
+      --dark-gray: #3A3A3A;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Header Styles */
+    header {
+      background: white;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--primary-orange);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--dark-gray);
+      margin: 0 1rem;
+      font-weight: 600;
+    }
+
+    /* Language Switcher */
+    .lang-switcher {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .lang-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      color: var(--dark-gray);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* Donate Button */
+    .donate-btn {
+      background: var(--primary-green);
+      color: white !important;
+      padding: 0.8rem 2rem;
+      border-radius: 25px;
+      transition: background 0.3s;
+      text-decoration: none;
+    }
+
+    .donate-btn:hover {
+      background: #3d8b63;
+    }
+
+    /* Join Section */
+    .join-section {
+      padding: 8rem 2rem 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .join-section h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--dark-gray);
+      margin-bottom: 3rem;
+    }
+
+    .join-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .join-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .join-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .join-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--primary-blue);
+    }
+
+    .join-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+      color: var(--dark-gray);
+    }
+
+    .join-card p {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    .join-card a {
+      display: inline-block;
+      background: var(--primary-green);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .join-card a:hover {
+      background: #3d8b63;
+    }
+
+    /* Join Form */
+    .join-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .join-form input,
+    .join-form select {
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .join-form button {
+      background: var(--primary-green);
+      color: white;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .join-form button:hover {
+      background: #3d8b63;
+    }
+
+    /* Footer Styles */
+    footer {
+      background: var(--dark-gray);
+      color: white;
+      padding: 3rem 2rem;
+      margin-top: 4rem;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .footer-content p {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .join-section h1 {
+        font-size: 2rem;
+      }
+      .join-card {
+        padding: 1.5rem;
+      }
+      .join-icon {
+        font-size: 2.5rem;
+      }
+      .join-card h3 {
+        font-size: 1.2rem;
+      }
+      .join-card p {
+        font-size: 0.9rem;
+      }
+      .join-form input,
+      .join-form select {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with Language Switcher -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">ZIEJ</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="programs.html">Programs</a>
+        <a href="contact.html">Contact</a>
+        <a href="donate.html" class="donate-btn">Donate Now</a>
+      </nav>
+      <div class="lang-switcher">
+        <button class="lang-btn" onclick="changeLanguage('en')">ENGLISH</button>
+        <button class="lang-btn" onclick="changeLanguage('es')">SWAHILI</button>
+        <button class="lang-btn" onclick="changeLanguage('fr')">FRENCH</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Join Our Movement Section -->
+  <section class="join-section">
+    <h1 data-i18n="join_title">Join Our Movement</h1>
+    <div class="join-container">
+      <div class="join-card">
+        <i class="fas fa-hands-helping join-icon"></i>
+        <h3 data-i18n="volunteer_title">Volunteer with Us</h3>
+        <p data-i18n="volunteer_text">Join our team on the ground to support community monitoring, advocacy, and legal initiatives.</p>
+        <a href="contact.html" data-i18n="volunteer_button">Sign Up to Volunteer</a>
+      </div>
+      <div class="join-card">
+        <i class="fas fa-user-plus join-icon"></i>
+        <h3 data-i18n="member_title">Become a Member</h3>
+        <p data-i18n="member_text">Membership gives you access to exclusive events, updates, and a chance to vote on key initiatives.</p>
+        <form class="join-form">
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
+          <select required>
+            <option value="" disabled selected>Select Membership Type</option>
+            <option value="individual">Individual ($20/year)</option>
+            <option value="family">Family ($50/year)</option>
+            <option value="organization">Organization ($100/year)</option>
+          </select>
+          <button type="submit" data-i18n="member_button">Join Now</button>
+        </form>
+      </div>
+      <div class="join-card">
+        <i class="fas fa-bullhorn join-icon"></i>
+        <h3 data-i18n="campaign_title">Join Our Campaigns</h3>
+        <p data-i18n="campaign_text">Participate in our campaigns to raise awareness and push for environmental policy changes.</p>
+        <a href="contact.html" data-i18n="campaign_button">Get Involved</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p data-i18n="footer_text">© 2025 Zambezi Institute for Environmental Justice. All rights reserved.</p>
+      <p>Contact: info@ziej.org | Lusaka, Zambia</p>
+    </div>
+  </footer>
+
+  <script>
+    // Basic Internationalization
+    const translations = {
+      en: {
+        join_title: "Join Our Movement",
+        volunteer_title: "Volunteer with Us",
+        volunteer_text: "Join our team on the ground to support community monitoring, advocacy, and legal initiatives.",
+        volunteer_button: "Sign Up to Volunteer",
+        member_title: "Become a Member",
+        member_text: "Membership gives you access to exclusive events, updates, and a chance to vote on key initiatives.",
+        member_button: "Join Now",
+        campaign_title: "Join Our Campaigns",
+        campaign_text: "Participate in our campaigns to raise awareness and push for environmental policy changes.",
+        campaign_button: "Get Involved",
+        footer_text: "© 2025 Zambezi Institute for Environmental Justice. All rights reserved."
+      },
+      es: {
+        join_title: "Jiunge na Harakati Zetu",
+        volunteer_title: "Jitolee Nasi",
+        volunteer_text: "Jiunge na timu yetu kwa vitendo vya ufuatiliaji wa jamii, utetezi, na mipango ya kisheria.",
+        volunteer_button: "Jiandikishe Kujitolea",
+        member_title: "Kuwa Mwanachama",
+        member_text: "Uanachama unakupa ufikiaji wa matukio ya kipekee, masasisho, na nafasi ya kupiga kura kwenye mipango muhimu.",
+        member_button: "Jiunge Sasa",
+        campaign_title: "Jiunge na Kampeni Zetu",
+        campaign_text: "Shiriki katika kampeni zetu za kukuza uelewa na kusukuma mabadiliko ya sera za mazingira.",
+        campaign_button: "Shirikiana",
+        footer_text: "© 2025 Taasisi ya Zambezi ya Haki ya Mazingira. Haki zote zimehifadhiwa."
+      },
+      fr: {
+        join_title: "Rejoignez Notre Mouvement",
+        volunteer_title: "Devenez Bénévole",
+        volunteer_text: "Rejoignez notre équipe sur le terrain pour soutenir la surveillance communautaire, le plaidoyer et les initiatives juridiques.",
+        volunteer_button: "Inscrivez-vous pour Être Bénévole",
+        member_title: "Devenez Membre",
+        member_text: "L'adhésion vous donne accès à des événements exclusifs, des mises à jour et la possibilité de voter sur des initiatives clés.",
+        member_button: "Adhérer Maintenant",
+        campaign_title: "Rejoignez Nos Campagnes",
+        campaign_text: "Participez à nos campagnes pour sensibiliser et pousser à des changements de politique environnementale.",
+        campaign_button: "S'Impliquer",
+        footer_text: "© 2025 Institut Zambezi pour la Justice Environnementale. Tous droits réservés."
+      }
+    };
+
+    function changeLanguage(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        element.textContent = translations[lang][key];
+      });
+    }
+
+    // Set default language to English
+    changeLanguage('en');
+  </script>
+</body>
+</html>
